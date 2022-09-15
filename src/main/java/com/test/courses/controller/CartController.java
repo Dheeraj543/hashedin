@@ -12,7 +12,7 @@ public class CartController {
 	public Boolean addToCart(@PathVariable int userId,@PathVariable int courseId) {
 		return true;
 	}
-	@DeleteMapping("/deleteFromCart/{userId}/{courseId")
+	@DeleteMapping("/deleteFromCart/{userId}/{courseId}")
 	public Boolean deleteFromCart(@PathVariable int userId,@PathVariable int courseId) {
 		return true;
 	}

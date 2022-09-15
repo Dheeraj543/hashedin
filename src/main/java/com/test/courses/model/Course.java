@@ -1,5 +1,10 @@
 package com.test.courses.model;
 
-public class Course {
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+@Entity
+public class Course {
+	@Id
+	private int courseId;
 }

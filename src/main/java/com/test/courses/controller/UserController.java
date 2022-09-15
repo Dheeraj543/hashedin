@@ -2,24 +2,35 @@ package com.test.courses.controller;
 
 import java.util.List;
 
-import org.springframework.stereotype.Controller;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.test.courses.model.Enrollment;
-import com.test.courses.model.User;
+import com.test.courses.model.Person;
+import com.test.courses.service.UserService;
 
-@Controller
+@RestController
 public class UserController {
+	@Autowired
+	UserService userService;
 	@PostMapping("/addUser")
-	public Boolean addUser(@RequestBody User user) {
-		return true;
+	public void adduser(@RequestBody Person user) {
+		System.out.print(user);
+		try {
+		userService.add(user);
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		//return true;
 	}
 	@PutMapping("/updteUser/{userId}")
-	public Boolean updateUser(@PathVariable int userId,@RequestBody User user) {
+	public Boolean updateUser(@PathVariable int userId,@RequestBody Person user) {
 		return true;
 	}
 	@GetMapping("/getEnrollments/{userId}")
