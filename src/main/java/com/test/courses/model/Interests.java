@@ -11,11 +11,14 @@ public class Interests {
 	public Interests() {
 		super();
 	}
+	
 	@Id
 	private int interestId;
 	@ManyToMany(mappedBy="interest")
 	Set<Person> users;
 	private String name;
+	
+	
 	public int getInterestId() {
 		return interestId;
 	}
