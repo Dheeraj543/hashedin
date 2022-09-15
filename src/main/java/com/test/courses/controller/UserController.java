@@ -31,6 +31,7 @@ public class UserController {
 	}
 	@PutMapping("/updteUser/{userId}")
 	public Boolean updateUser(@PathVariable int userId,@RequestBody Person user) {
+		userService.update(user);
 		return true;
 	}
 	@GetMapping("/getEnrollments/{userId}")
